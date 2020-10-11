@@ -15,6 +15,7 @@
 		1F0F5F8C2533C4F90021DEF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0F5F8A2533C4F90021DEF2 /* LaunchScreen.storyboard */; };
 		1F0F5F972533C4F90021DEF2 /* TableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F5F962533C4F90021DEF2 /* TableViewTests.swift */; };
 		1F0F5FA22533C4F90021DEF2 /* TableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F5FA12533C4F90021DEF2 /* TableViewUITests.swift */; };
+		1F0F5FB12533CA9E0021DEF2 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F5FB02533CA9E0021DEF2 /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1F0F5F9D2533C4F90021DEF2 /* TableViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F0F5FA12533C4F90021DEF2 /* TableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUITests.swift; sourceTree = "<group>"; };
 		1F0F5FA32533C4F90021DEF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F0F5FB02533CA9E0021DEF2 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		1F0F5F7E2533C4F60021DEF2 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				1F0F5FAF2533CA830021DEF2 /* Classes */,
 				1F0F5F7F2533C4F60021DEF2 /* AppDelegate.swift */,
 				1F0F5F812533C4F60021DEF2 /* SceneDelegate.swift */,
 				1F0F5F832533C4F60021DEF2 /* ViewController.swift */,
@@ -126,6 +129,14 @@
 				1F0F5FA32533C4F90021DEF2 /* Info.plist */,
 			);
 			path = TableViewUITests;
+			sourceTree = "<group>";
+		};
+		1F0F5FAF2533CA830021DEF2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1F0F5FB02533CA9E0021DEF2 /* CustomCell.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 			files = (
 				1F0F5F842533C4F70021DEF2 /* ViewController.swift in Sources */,
 				1F0F5F802533C4F60021DEF2 /* AppDelegate.swift in Sources */,
+				1F0F5FB12533CA9E0021DEF2 /* CustomCell.swift in Sources */,
 				1F0F5F822533C4F60021DEF2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
