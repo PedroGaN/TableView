@@ -32,9 +32,9 @@ class TableView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath) as! CustomCell
         
-        cell.textLabel?.text = data[indexPath.row]
+        cell.titleLabel?.text = data[indexPath.row]
         
         return cell
     }

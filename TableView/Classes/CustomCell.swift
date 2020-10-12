@@ -7,3 +7,11 @@
 //
 
 import UIKit
+
+class CustomCell : UITableViewCell {
+    
+    @IBOutlet weak var genreLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var cellImage: UIImageView!
+    
+}
