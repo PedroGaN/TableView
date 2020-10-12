@@ -59,6 +59,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="FNk-Bs-pbB" secondAttribute="trailing" constant="121" id="lu6-4H-fig"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="cellID"/>
                                         <connections>
                                             <outlet property="cellImage" destination="Iz0-PT-llF" id="md8-0A-JxI"/>
                                             <outlet property="genreLabel" destination="fQt-qh-pS5" id="hf4-mS-hrm"/>

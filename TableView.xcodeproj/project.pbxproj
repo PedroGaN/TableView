@@ -17,7 +17,8 @@
 		1F0F5FA22533C4F90021DEF2 /* TableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F5FA12533C4F90021DEF2 /* TableViewUITests.swift */; };
 		1F0F5FB12533CA9E0021DEF2 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F5FB02533CA9E0021DEF2 /* CustomCell.swift */; };
 		1F0F5FB32533D7760021DEF2 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F5FB22533D7760021DEF2 /* CellView.swift */; };
-		1F0F5FB52533E6170021DEF2 /* film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F5FB42533E6170021DEF2 /* film.swift */; };
+		1F0F5FB52533E6170021DEF2 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F5FB42533E6170021DEF2 /* Film.swift */; };
+		1F0F5FB72533E8F40021DEF2 /* FilmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0F5FB62533E8F40021DEF2 /* FilmStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,8 @@
 		1F0F5FA32533C4F90021DEF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F0F5FB02533CA9E0021DEF2 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		1F0F5FB22533D7760021DEF2 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
-		1F0F5FB42533E6170021DEF2 /* film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = film.swift; sourceTree = "<group>"; };
+		1F0F5FB42533E6170021DEF2 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		1F0F5FB62533E8F40021DEF2 /* FilmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				1F0F5FB02533CA9E0021DEF2 /* CustomCell.swift */,
-				1F0F5FB42533E6170021DEF2 /* film.swift */,
+				1F0F5FB42533E6170021DEF2 /* Film.swift */,
+				1F0F5FB62533E8F40021DEF2 /* FilmStorage.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -277,7 +280,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F0F5F842533C4F70021DEF2 /* TableView.swift in Sources */,
-				1F0F5FB52533E6170021DEF2 /* film.swift in Sources */,
+				1F0F5FB72533E8F40021DEF2 /* FilmStorage.swift in Sources */,
+				1F0F5FB52533E6170021DEF2 /* Film.swift in Sources */,
 				1F0F5FB32533D7760021DEF2 /* CellView.swift in Sources */,
 				1F0F5F802533C4F60021DEF2 /* AppDelegate.swift in Sources */,
 				1F0F5FB12533CA9E0021DEF2 /* CustomCell.swift in Sources */,
