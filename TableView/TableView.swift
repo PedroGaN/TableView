@@ -8,7 +8,7 @@
 
 import UIKit
 
-var filmStorage : FilmStorage?
+var filmStorage : FilmStorage? = FilmStorage()
 
 var indexAt = 0
 
@@ -17,21 +17,25 @@ class TableView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var data :  [String] = ["Her"]
-    var data2: [String] = ["drama"]
+    //var data :  [String] = ["Her"]
+    //var data2: [String] = ["drama"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+
+        
         tableView.dataSource = self
         tableView.delegate = self
+        
+        filmStorage = FilmStorage()
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return filmStorage?.filmStorage.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,8 +45,9 @@ class TableView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         cell.titleLabel?.text = filmStorage?.filmStorage[indexPath.row].title
         cell.genreLabel?.text = filmStorage?.filmStorage[indexPath.row].genre
-        //let image : UIImage = UIImage(named: (data[indexPath.row].image ?? "")+"")!
-        //cell.cellImage = UIImageView(image: image)
+        var tempImage = filmStorage?.filmStorage[indexPath.row].image ?? "notFound"
+        let image : UIImage = UIImage(named: tempImage)!
+        cell.cellImage = UIImageView(image: image)
         
         return cell
     }

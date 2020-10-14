@@ -61,7 +61,7 @@
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="cellID"/>
                                         <connections>
-                                            <outlet property="cellImage" destination="Iz0-PT-llF" id="md8-0A-JxI"/>
+                                            <outlet property="cellImage" destination="WXe-c4-2VM" id="m17-fr-oMA"/>
                                             <outlet property="genreLabel" destination="fQt-qh-pS5" id="hf4-mS-hrm"/>
                                             <outlet property="titleLabel" destination="FNk-Bs-pbB" id="52y-Hu-fmO"/>
                                         </connections>
