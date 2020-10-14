@@ -45,9 +45,9 @@ class TableView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         cell.titleLabel?.text = filmStorage?.filmStorage[indexPath.row].title
         cell.genreLabel?.text = filmStorage?.filmStorage[indexPath.row].genre
-        var tempImage = filmStorage?.filmStorage[indexPath.row].image ?? "notFound"
+        let tempImage = filmStorage?.filmStorage[indexPath.row].image ?? "notFound"
         let image : UIImage = UIImage(named: tempImage)!
-        cell.cellImage = UIImageView(image: image)
+        cell.cellImage.image = image
         
         return cell
     }
