@@ -8,23 +8,17 @@
 
 import UIKit
 
-var filmStorage : FilmStorage? = FilmStorage()
-
-var indexAt = 0
+var cellIndex = 0
 
 class TableView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-
-    @IBOutlet weak var tableView: UITableView!
+    var filmStorage : FilmStorage? = FilmStorage()
     
-    //var data :  [String] = ["Her"]
-    //var data2: [String] = ["drama"]
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -33,16 +27,19 @@ class TableView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    //------------------------------
+    //Table Functions
+    //ROWS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return filmStorage?.filmStorage.count ?? 0
     }
     
+    //PAINTING INFO
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath) as! CustomCell
     
-        
         cell.titleLabel?.text = filmStorage?.filmStorage[indexPath.row].title
         cell.genreLabel?.text = filmStorage?.filmStorage[indexPath.row].genre
         let tempImage = filmStorage?.filmStorage[indexPath.row].image ?? "notFound"
@@ -52,11 +49,29 @@ class TableView: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    //ROW HEIGHT
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 123.0;
+    }
+    //-------------------------------
+    
+    //-------------------------------
+    //Navigation Functions
+    //NAVIGATION TO CELL DETAILS "CellView"
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        indexAt = indexPath.row
+    
+        cellIndex = indexPath.row
         performSegue(withIdentifier: "cellSegue", sender: self)
         
+    }
+
+    //PASSING INFO TO "CellView"
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let cellViewController = segue.destination as? CellView
+        {
+            cellViewController.setDetail(pickedFilm: filmStorage?.filmStorage[cellIndex] ?? Film(title: "notFound", genre: "notFound", image: "notFound", synopsis: "notFound"))
+        }
     }
 }
 
