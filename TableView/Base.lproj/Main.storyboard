@@ -82,6 +82,7 @@
                     <connections>
                         <outlet property="tableView" destination="5BH-7h-sw3" id="Sc1-kJ-bNc"/>
                         <segue destination="KYa-fj-IPd" kind="show" identifier="cellSegue" id="REK-HC-nKa"/>
+                        <segue destination="ecS-bA-ahL" kind="show" identifier="webSegue" id="auj-zH-duU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -162,7 +163,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lub-3G-flE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="359" y="459"/>
+            <point key="canvasLocation" x="641" y="775"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="84V-ze-Ikt">
+            <objects>
+                <viewController title="Web View Controller" id="ecS-bA-ahL" customClass="WebViewController" customModule="TableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wol-kw-swg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="4Sn-2w-1XO">
+                                <rect key="frame" x="189" y="386" width="37" height="37"/>
+                                <color key="color" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jE-fi-ch9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4Sn-2w-1XO" firstAttribute="top" secondItem="lBl-mD-4NR" secondAttribute="top" constant="386" id="2bw-m6-YQ9"/>
+                            <constraint firstItem="2jE-fi-ch9" firstAttribute="top" secondItem="lBl-mD-4NR" secondAttribute="top" id="Bar-BI-x36"/>
+                            <constraint firstItem="lBl-mD-4NR" firstAttribute="bottom" secondItem="2jE-fi-ch9" secondAttribute="bottom" id="CRa-9H-7EX"/>
+                            <constraint firstItem="4Sn-2w-1XO" firstAttribute="leading" secondItem="lBl-mD-4NR" secondAttribute="leading" constant="189" id="NpA-gn-XGf"/>
+                            <constraint firstItem="2jE-fi-ch9" firstAttribute="leading" secondItem="lBl-mD-4NR" secondAttribute="leading" id="SQm-wb-rhk"/>
+                            <constraint firstItem="lBl-mD-4NR" firstAttribute="trailing" secondItem="2jE-fi-ch9" secondAttribute="trailing" id="hZS-wS-CCw"/>
+                            <constraint firstItem="lBl-mD-4NR" firstAttribute="bottom" secondItem="4Sn-2w-1XO" secondAttribute="bottom" constant="385" id="hjH-8h-rXI"/>
+                            <constraint firstItem="lBl-mD-4NR" firstAttribute="trailing" secondItem="4Sn-2w-1XO" secondAttribute="trailing" constant="188" id="pZg-cF-HI2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lBl-mD-4NR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sl2-Ze-eeX"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="4Sn-2w-1XO" id="RTZ-2e-ar2"/>
+                        <outlet property="webView" destination="2jE-fi-ch9" id="WGS-7L-GNf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SEN-TF-k0E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="640.57971014492762" y="1547.5446428571429"/>
         </scene>
     </scenes>
     <resources>

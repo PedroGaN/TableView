@@ -8,7 +8,7 @@
 
 import UIKit
 
-var cellIndex = 0
+private var cellIndex = 0
 
 class TableView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -60,8 +60,9 @@ class TableView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     //NAVIGATION TO CELL DETAILS "CellView"
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
+        showActionSheet(self)
         cellIndex = indexPath.row
-        performSegue(withIdentifier: "cellSegue", sender: self)
+        //
         
     }
 
@@ -70,8 +71,36 @@ class TableView: UIViewController, UITableViewDataSource, UITableViewDelegate {
     {
         if let cellViewController = segue.destination as? CellView
         {
-            cellViewController.setDetail(pickedFilm: filmStorage?.filmStorage[cellIndex] ?? Film(title: "notFound", genre: "notFound", image: "notFound", synopsis: "notFound"))
+            cellViewController.setDetail(pickedFilm: filmStorage?.filmStorage[cellIndex] ?? Film(title: "notFound", genre: "notFound", image: "notFound", synopsis: "notFound", trailerURL: "https://www.google.com/"))
         }
+        else if let webViewController = segue.destination as? WebViewController
+        {
+            webViewController.setWeb(pickedFilm: filmStorage?.filmStorage[cellIndex] ?? Film(title: "notFound", genre: "notFound", image: "notFound", synopsis: "notFound",trailerURL: "https://www.google.com/"))
+        }
+        
     }
+    //-------------------------------
+    
+    //-------------------------------
+    //ActionSheet
+    func showActionSheet(_ sender: Any) {
+        
+        let actionSheetMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
+        
+        let webAction = UIAlertAction(title: "Trailer", style: .default) { action in
+            self.performSegue(withIdentifier: "webSegue", sender: self)
+        }
+        let detailAction = UIAlertAction(title: "Details", style: .default) {action in
+            self.performSegue(withIdentifier: "cellSegue", sender: self)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        actionSheetMenu.addAction(webAction)
+        actionSheetMenu.addAction(detailAction)
+        actionSheetMenu.addAction(cancelAction)
+        
+        self.present(actionSheetMenu, animated: true, completion: nil)
+    }
+    
 }
 

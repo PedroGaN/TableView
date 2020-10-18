@@ -13,11 +13,13 @@ class Film {
     var genre: String?
     var image: String?
     var synopsis: String?
+    var trailerURL: String?
     
-    init(title: String, genre: String, image: String, synopsis: String) {
+    init(title: String, genre: String, image: String, synopsis: String, trailerURL: String) {
         self.title = title
         self.genre = genre
         self.image = image
         self.synopsis = synopsis
+        self.trailerURL = trailerURL
     }
 }
